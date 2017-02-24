@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Today I Learned</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet">
+  </head>
+  <body>
+    <div id="container">
+      <div class="intro">
+      <h1>Today I Learned</h1>
+    <p>
+      This is a simple React app, using functional stateless dumb components and smart class-based components with state.
+    </p>
+    <p>
+      The App pulls data from the <a href="https://docs.google.com/forms/d/e/1FAIpQLSd74V7F_lA8MH3StsQXPki8xUSYRWb_msG6pB3ejNdnUFzPqg/viewform" target="_blank">Today I Learned</a> Google form which saves data to a spreadsheet.
+      The data is retrieved via a fetch command, pushed into state, and the child components are rendered via the state being passed in to the children as props. 
+    </p>
+    <p>
+      The data is displayed in reverse date order, newest at the top.
+    </p>
+    <p>
+      By Tim and Katja
+    </p>
+    </div>
+  
+  <div>
+    <div id="app"></div>
+
+  </div>
+  <script src="bundle.js"></script>
+    </div>
+  </body>
+</html>
