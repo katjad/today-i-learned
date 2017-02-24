@@ -1,0 +1,42 @@
+/* * {
+  border: 1px solid grey;
+} */
+
+#container {
+  margin: 50px;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  color: #ba68c8;
+}
+
+body {
+  color: #9C27B0;
+}
+
+.row:nth-child(odd)		{ 
+  background-color:#e8e8e8; 
+}
+
+.row:nth-child(even)		{  
+  border: #e8e8e8 2px solid;
+}
+
+.row {
+  margin-left: 0px;
+  margin-right: 0px;
+  padding: 30px;
+}
+
+.intro {
+  margin: 10px;
+  
+}
+
+.intro p {
+  color: grey;
+}
