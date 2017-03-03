@@ -1,3 +1,5 @@
+// Main layout component to contain all subcomponents
+
 import React from 'react'
 import Table from './Table'
 

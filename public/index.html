@@ -8,21 +8,23 @@
   </head>
   <body>
     <div id="container">
-      <div class="intro">
-      <h1>Today I Learned</h1>
-    <p>
-      This is a simple React app, using functional stateless dumb components and smart class-based components with state.
-    </p>
-    <p>
-      The App pulls data from the <a href="https://docs.google.com/forms/d/e/1FAIpQLSd74V7F_lA8MH3StsQXPki8xUSYRWb_msG6pB3ejNdnUFzPqg/viewform" target="_blank">Today I Learned</a> Google form which saves data to a spreadsheet.
-      The data is retrieved via a fetch command, pushed into state, and the child components are rendered via the state being passed in to the children as props. 
-    </p>
-    <p>
-      The data is displayed in reverse date order, newest at the top.
-    </p>
-    <p>
-      By Tim and Katja
-    </p>
+      <div >
+      <h1 class="header">Today I Learned</h1>
+    
+        <div class="intro">
+          <p>This is a React app, using functional stateless dumb components and smart class-based components with state.</p>
+          <p>
+            The App retrieves data from the <a href="https://docs.google.com/forms/d/e/1FAIpQLSd74V7F_lA8MH3StsQXPki8xUSYRWb_msG6pB3ejNdnUFzPqg/viewform" target="_blank">Today I Learned</a> Google form which saves data to a spreadsheet.
+            The data is retrieved via a fetch command, pushed into state, and the child components are rendered via the state being passed to the children as props. 
+          </p>
+          <p>
+            The data is displayed in reverse date order, newest at the top. 
+          </p>
+          <p>
+            Items are  clickable. This intro can be toggled on/off by clicking the heading above.
+          </p>
+        </div> 
+    
     </div>
   
   <div>
@@ -30,6 +32,12 @@
 
   </div>
   <script src="bundle.js"></script>
+  <script>
+    const header = document.querySelector('.header')
+    const intro = document.querySelector('.intro')
+           
+    header.addEventListener('click', () => intro.classList.toggle('hidden'))      
+  </script>
     </div>
   </body>
 </html>
