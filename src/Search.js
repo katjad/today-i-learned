@@ -7,8 +7,6 @@ Dumb component, renders the search bar.
 import React from 'react'
 
 const Search = (props) => {
-   
-   
 
   return (    
     <div className="row" >       
