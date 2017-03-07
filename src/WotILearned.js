@@ -10,10 +10,7 @@ const WotILearned = ({item, onHandleClick}) => {
     return a.hostname;
   }
   
-  // prep the links into real a-tags
-
-  console.log(item.links[0])
-  
+  // prep the links into real a-tags  
   const urls = item.links.map(url => {
     const hasLinks = item.links[0] !== ""
     if (hasLinks) {
@@ -25,8 +22,7 @@ const WotILearned = ({item, onHandleClick}) => {
           <br/>
         </div>
       )
-    }
-    
+    } 
   })
   
   //console.log('id is', item.id)
