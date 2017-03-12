@@ -1,6 +1,6 @@
-/*
+/* Table
 
-Stores state for the Table and renders the Search and rows
+Stores state (mostly the data fetched from the spreadsheet) for the Table and renders the Search and rows
 
 */
 
@@ -31,12 +31,7 @@ class Table extends React.Component {
   handleExpandedToggle = (id) => {
    
     const updated = this.state.dataSource.map(el => {
-      if(el.id === id) {
-        el.isExpanded = true
-      } else {
-        el.isExpanded = false
-      }
-      
+      el.id === id ? el.isExpanded = true : el.isExpanded = false    // sets currently clicked to expanded and others to not expanded via an expanded flag on the element.
       return el
     })
       
@@ -44,7 +39,7 @@ class Table extends React.Component {
       dataSource: updated
     })
   } 
-  
+   
   
   componentDidMount() {
     getTodayILearnedData(spreadsheetUrl).then(response => {  
@@ -69,16 +64,19 @@ class Table extends React.Component {
   render() {
       let htmlList = this.getFilteredResults(this.state.dataSource, this.state.searchFieldText)
         .map(wotILearned => {
-        return <WotILearned key={wotILearned.id} item={wotILearned} onHandleClick={this.handleExpandedToggle} />
+        return <WotILearned key={wotILearned.id} item={wotILearned} onHandleClick={this.handleExpandedToggle }  />
       })
       
-      let displayErrMsg = this.state.dataSource.length > 0 && htmlList.length === 0  // there is a database of data in state and search returned no results
+      const dataSourceIsFetched = this.state.dataSource.length > 0
+      const searchTermNotFound = htmlList.length === 0
+      
+      let displayErrMsg = dataSourceIsFetched && searchTermNotFound  
     
     return (
       <div id="learnings">
       <Search searchValue={this.state.searchFieldText} onSearchChange={this.handleSearchInput}/>
       {htmlList}
-      { displayErrMsg && 'Search term not found'}
+      {displayErrMsg && 'Search term not found'}
       </div>
     )
   }

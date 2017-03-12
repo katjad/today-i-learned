@@ -1,4 +1,4 @@
-// create a click handler and eventListener to toggle isCollapsed
+// a single row in the Table
 
 import React from 'react'
 
@@ -25,7 +25,6 @@ const WotILearned = ({item, onHandleClick}) => {
     } 
   })
   
-  //console.log('id is', item.id)
   
   let expanded = item.isExpanded
 
