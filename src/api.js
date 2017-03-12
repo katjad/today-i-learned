@@ -1,11 +1,14 @@
-// fetch could be broken out into an api.js file with a getTilData function that returns json data
+/* 
+  getTodayILearnedData takes the Google spreadsheet url as it's parameter and 
+  returns a promise of the data, formatted into a usable object
+*/
 
 const convertToJson = (response) => response.json()
 
 const formatData = (json) => {
-  let formattedFeed = json.feed.entry.map(wotILearned => { // if the let is not going to change use const instead
+  const formattedFeed = json.feed.entry.map(wotILearned => { 
 
-    let id = wotILearned.id.$t.substr(wotILearned.id.$t.lastIndexOf('/') + 1)
+    const id = wotILearned.id.$t.substr(wotILearned.id.$t.lastIndexOf('/') + 1)
 
     return {
       id: id, // used for the line item key values
@@ -16,7 +19,7 @@ const formatData = (json) => {
       name: wotILearned.gsx$name.$t,
       email: wotILearned.gsx$emailaddress.$t,
       awesomeness: wotILearned.gsx$howawesomedoyoufeel.$t,
-      isExpanded: false // used to expand/hide each wotILearned item
+      isExpanded: false // used to toggle expand/hide each wotILearned item
     }
   }).reverse()
     return formattedFeed
