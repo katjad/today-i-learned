@@ -1,41 +1,44 @@
 {
-	"//1": "describes your app and its dependencies",
-	"//2": "https://docs.npmjs.com/files/package.json",
-	"//3": "updating this file will download and update your packages",
-	"name": "my-gomix-app",
-	"version": "0.0.1",
-	"description": "What am I about?",
-	"main": "server.js",
-	"scripts": {
-		"start": "webpack-dev-server"
-	},
-	"dependencies": {
-		"express": "^4.14.1",
-		"react": "^15.4.2",
-		"react-dom": "^15.4.2"
-
-	},
-	"devDependencies": {
-		"babel": "latest",
-		"babel-core": "latest",
-		"babel-loader": "latest",
-		"babel-preset-stage-0": "latest",
-		"babel-preset-es2015": "latest",
-		"babel-preset-react": "latest",
-		"webpack": "beta",
-		"webpack-dev-server": "beta",
-    "babel-plugin-transform-class-properties": "latest"
-	},
-	"engines": {
-		"node": "6.9.x"
-	},
-	"repository": {
-		"url": "https://gomix.com/#!/project/welcome-project"
-	},
-	"license": "MIT",
-	"keywords": [
-		"node",
-		"gomix",
-		"express"
-	]
+  "//1": "describes your app and its dependencies",
+  "//2": "https://docs.npmjs.com/files/package.json",
+  "//3": "updating this file will download and update your packages",
+  "name": "my-gomix-app",
+  "version": "0.0.1",
+  "description": "What am I about?",
+  "main": "server.js",
+  "scripts": {
+    "start": "npm-run-all --parallel webpack test",
+    "webpack": "webpack-dev-server",
+    "test": "mocha --compilers js:babel-core/register \"src/*.test.js\" --watch"
+  },
+  "dependencies": {
+    "express": "^4.14.1",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2"
+  },
+  "devDependencies": {
+    "babel": "latest",
+    "babel-core": "latest",
+    "babel-loader": "latest",
+    "babel-plugin-transform-class-properties": "latest",
+    "babel-preset-es2015": "latest",
+    "babel-preset-react": "latest",
+    "babel-preset-stage-0": "latest",
+    "chai": "^3.5.0",
+    "npm-run-all": "3.1.1",
+    "webpack": "beta",
+    "webpack-dev-server": "beta"
+  },
+  "engines": {
+    "node": "6.9.x"
+  },
+  "repository": {
+    "url": "https://gomix.com/#!/project/welcome-project"
+  },
+  "license": "MIT",
+  "keywords": [
+    "node",
+    "gomix",
+    "express"
+  ]
 }
